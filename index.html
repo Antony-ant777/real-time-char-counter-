@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery/jquery.js"></script>
+     <style>
+        body{
+            background-color: rgb(201, 238, 186);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tot{
+           
+            background-color: rgb(102, 212, 212);
+            padding: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        .one{
+            display: flex;
+            gap: 200px;
+        }
+        textarea{
+            width: 500px;
+            height: 75px;
+        }
+
+
+     </style>
+     
+</head>
+<body>
+    <div class="tot">
+    <h1>Real-time Character Counter </h1>
+    <textarea id="inp" row="4" col="50" placeholder="Enter the text here"></textarea>
+    <div class="one">
+      <p>text in input:<span id="count">0</span></p>
+      <p>remaining:<span id="rem">50</span></p>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var rema=50;
+            $('#inp').on('input',function(){
+                var count=$(this).val().length;
+                var rem=rema-count;
+                if (count>50)
+                {
+                    window.alert("You reached the maximum Character Count");
+                }
+                else{
+                $('#count').text(count);
+                $('#rem').text(rem);
+                }
+            });
+        });
+    </script>
+
+
+    
+</body>
+</html>
+ 
